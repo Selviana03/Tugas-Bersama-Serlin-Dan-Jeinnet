@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Studi Kasus OOP Shopee</title>
+    <style>
+        body { 
+            background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e); 
+            color: #d1d1d1; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: rgba(20, 20, 40, 0.8);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            border: 1px solid #4a4a8c;
+        }
+        h1, h2 { color: #ffeb3b; text-align: center; }
+        .author { text-align: center; font-style: italic; margin-bottom: 30px; border-bottom: 1px solid #555; padding-bottom: 10px; }
+        code { background: #000; color: #00ff00; padding: 2px 5px; border-radius: 4px; }
+        pre { background: #000; padding: 15px; border-radius: 10px; overflow-x: auto; border-left: 5px solid #ffeb3b; }
+        .section { margin-bottom: 25px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Studi Kasus: Sistem Penjualan E-Commerce Shopee</h1>
+    <div class="author">
+        Serlin Selviana Giay (251410030) | Jeinnet Verara Ayomi (251410033)<br>
+        Kelas: SI2A
+    </div>
+
+    <div class="section">
+        <h2>1. Latar Belakang</h2>
+        <p>Shopee merupakan aplikasi e-commerce yang melayani jutaan pengguna. Sistem ini memerlukan manajemen entitas yang rumit seperti produk, user, keranjang, dan transaksi. Pendekatan prosedural biasa akan membuat kode menjadi sulit dikelola seiring bertambahnya fitur.</p>
+    </div>
+
+    <div class="section">
+        <h2>2. Mengapa Menggunakan OOP?</h2>
+        <ul>
+            <li><b>Encapsulation:</b> Data seperti saldo atau detail pesanan dilindungi di dalam kelas.</li>
+            <li><b>Inheritance:</b> Memudahkan pembuatan kategori produk (elektronik, fashion, dll) dengan karakteristik berbeda.</li>
+            <li><b>Abstraction:</b> Menyederhanakan proses kompleks seperti <code>checkout()</code> agar mudah diakses.</li>
+            <li><b>Modularity:</b> Memudahkan pemeliharaan sistem yang besar.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>3. Langkah-Langkah Penyelesaian</h2>
+        <ol>
+            <li>Analisis kebutuhan entitas (User, Produk, Cart, Transaksi).</li>
+            <li>Pembuatan kelas-kelas utama (Source Code 1-5).</li>
+            <li>Implementasi relasi antar objek.</li>
+            <li>Pengujian alur logika transaksi.</li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>Implementasi Source Code</h2>
+        <p>Berikut adalah struktur kelas yang dibangun:</p>
+        <pre>
+// Source Code 1: Abstraksi Produk
+abstract class Product { String name; double price; }
+
+// Source Code 2: Inheritance (Turunan Produk)
+class Electronic extends Product { ... }
+
+// Source Code 3: Composition (Keranjang)
+class Cart { List&lt;Product&gt; items; void add(p) { ... } }
+
+// Source Code 4: Class User
+class User { String name; Cart cart; }
+
+// Source Code 5: Main Logic
+void main() { 
+  var user = User("Serlin & Jeinnet");
+  user.cart.addItem(Electronic("Laptop", 10000000));
+}
+        </pre>
+    </div>
+</div>
+
+</body>
+</html>
